@@ -2,25 +2,25 @@
 
 // set up a constant / variable for each clock hand
 
-var secondHand = document.querySelector("#second-hand");
-var minsHand = document.querySelector("#minute-hand");
-var hourHand = document.querySelector("#hour-hand");
+const secondHand = document.querySelector("#second-hand");
+const minsHand = document.querySelector("#minute-hand");
+const hourHand = document.querySelector("#hour-hand");
 
 function setDate () {
-  var now = new Date();
+  const now = new Date();
 
-  var seconds = now.getSeconds();
-  var secondsDegrees = ((seconds / 60) * 360) + 90;
+  const seconds = now.getSeconds();
+  const secondsDegrees = ((seconds / 60) * 360) + 90;
   secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
 
-  var mins = now.getMinutes();
-  var minsDegrees = ((mins / 60) * 360) + 90;
+  const mins = now.getMinutes();
+  const minsDegrees = ((mins / 60) * 360) + 90;
   minsHand.style.transform = `rotate(${minsDegrees}deg)`;
 
   // set up the hour hand so it moves each minute, to enable it to move between the full hour marks
-  var hour = now.getHours();
-  var currHour = hour + (mins / 60);
-  var hourDegrees = ((currHour / 12) * 360) + 90;
+  const hour = now.getHours();
+  const currHour = hour + (mins / 60);
+  const hourDegrees = ((currHour / 12) * 360) + 90;
   hourHand.style.transform = `rotate(${hourDegrees}deg)`;
 
   console.log("seconds =" + seconds);
